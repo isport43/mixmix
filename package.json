@@ -1,0 +1,14 @@
+{
+  "name": "mixmix-vinn",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:css",
+    "build:css": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./public/tailwind.css --minify",
+    "dev:css": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./public/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.0",
+    "tailwindcss": "4.3.0"
+  }
+}

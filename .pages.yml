@@ -1,0 +1,194 @@
+media:
+  input: public/uploads
+  output: /uploads
+  categories: [image]
+  extensions: [jpg, jpeg, png, webp, gif, svg]
+  rename: safe
+
+content:
+  - name: site
+    label: Сайт Mix Mix
+    type: file
+    path: public/content/site.yml
+    format: yaml
+    fields:
+      - name: seo
+        label: SEO та пошук
+        type: object
+        fields:
+          - { name: title, label: Заголовок сайту, type: string, required: true }
+          - { name: description, label: Опис для Google, type: text, required: true }
+      - name: theme
+        label: Кольори
+        type: object
+        fields:
+          - { name: pink, label: Основний рожевий, type: string }
+          - { name: pink_dark, label: Темний рожевий, type: string }
+          - { name: ink, label: Темний колір, type: string }
+          - { name: cream, label: Кремовий фон, type: string }
+          - { name: yellow, label: Жовтий акцент, type: string }
+          - { name: lavender, label: Лавандовий акцент, type: string }
+      - name: brand
+        label: Логотип і назва
+        type: object
+        fields:
+          - { name: name, label: Назва, type: string }
+          - { name: subtitle, label: Підпис, type: string }
+      - name: navigation
+        label: Меню
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Текст, type: string }
+          - { name: href, label: Посилання, type: string }
+      - name: hero
+        label: Перший екран
+        type: object
+        fields:
+          - { name: eyebrow, label: Верхній підпис, type: string }
+          - { name: title, label: Великий заголовок, type: string }
+          - { name: description, label: Опис, type: text }
+          - { name: location, label: Локація, type: string }
+          - { name: primary_button, label: Головна кнопка, type: string }
+          - { name: secondary_button, label: Друга кнопка, type: string }
+          - { name: image, label: Головне зображення, type: image }
+          - { name: image_alt, label: Опис зображення, type: string }
+          - { name: floating_note, label: Плаваюча примітка, type: string }
+      - name: intro
+        label: Про Mix Mix
+        type: object
+        fields:
+          - { name: kicker, label: Малий заголовок, type: string }
+          - { name: title, label: Заголовок, type: string }
+          - { name: text, label: Текст, type: text }
+          - name: stats
+            label: Показники
+            type: object
+            list: true
+            fields:
+              - { name: value, label: Значення, type: string }
+              - { name: label, label: Підпис, type: string }
+      - name: services_section
+        label: Заголовок розділу послуг
+        type: object
+        fields:
+          - { name: kicker, label: Малий заголовок, type: string }
+          - { name: title, label: Заголовок, type: string }
+          - { name: description, label: Опис, type: text }
+      - name: services
+        label: Послуги
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Назва, type: string, required: true }
+          - { name: tag, label: Позначка, type: string }
+          - { name: description, label: Опис, type: text }
+          - { name: price, label: Ціна, type: string }
+          - { name: image, label: Зображення, type: image }
+          - { name: image_alt, label: Опис зображення, type: string }
+          - { name: image_position, label: Позиція зображення CSS, type: string }
+      - name: benefits
+        label: Переваги
+        type: object
+        fields:
+          - { name: kicker, label: Малий заголовок, type: string }
+          - { name: title, label: Заголовок, type: string }
+          - name: items
+            label: Переваги
+            type: object
+            list: true
+            fields:
+              - { name: icon, label: Номер, type: string }
+              - { name: title, label: Назва, type: string }
+              - { name: text, label: Опис, type: text }
+      - name: pricing_section
+        label: Заголовок розділу цін
+        type: object
+        fields:
+          - { name: kicker, label: Малий заголовок, type: string }
+          - { name: title, label: Заголовок, type: string }
+          - { name: note, label: Примітка, type: text }
+      - name: price_cards
+        label: Пакети й ціни
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Назва, type: string }
+          - { name: accent, label: Позначка, type: string }
+          - { name: price, label: Ціна, type: string }
+          - { name: duration, label: Тривалість, type: string }
+          - { name: featured, label: Виділити картку, type: boolean }
+          - name: includes
+            label: Що входить
+            type: string
+            list: true
+      - name: extra_service
+        label: Додаткова послуга
+        type: object
+        fields:
+          - { name: title, label: Малий заголовок, type: string }
+          - { name: name, label: Назва, type: string }
+          - { name: price, label: Ціна, type: string }
+          - { name: description, label: Опис, type: text }
+          - { name: image, label: Зображення, type: image }
+          - { name: image_alt, label: Опис зображення, type: string }
+      - name: gallery_section
+        label: Заголовок галереї
+        type: object
+        fields:
+          - { name: kicker, label: Малий заголовок, type: string }
+          - { name: title, label: Заголовок, type: string }
+          - { name: description, label: Опис, type: text }
+      - name: gallery
+        label: Галерея
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Зображення, type: image }
+          - { name: alt, label: Опис зображення, type: string }
+          - { name: caption, label: Підпис, type: string }
+      - name: terms_section
+        label: Умови та запитання
+        type: object
+        fields:
+          - { name: kicker, label: Малий заголовок, type: string }
+          - { name: title, label: Заголовок, type: string }
+          - name: items
+            label: Питання й відповіді
+            type: object
+            list: true
+            fields:
+              - { name: question, label: Питання, type: string }
+              - { name: answer, label: Відповідь, type: text }
+      - name: contact
+        label: Контакти
+        type: object
+        fields:
+          - { name: kicker, label: Малий заголовок, type: string }
+          - { name: title, label: Заголовок, type: string }
+          - { name: text, label: Текст, type: text }
+          - { name: primary_phone_label, label: Перший телефон для показу, type: string }
+          - { name: primary_phone_href, label: Перший телефон для дзвінка, type: string }
+          - { name: secondary_phone_label, label: Другий телефон для показу, type: string }
+          - { name: secondary_phone_href, label: Другий телефон для дзвінка, type: string }
+          - { name: instagram_label, label: Instagram, type: string }
+          - { name: instagram_url, label: Посилання Instagram, type: string }
+          - { name: tiktok_label, label: TikTok, type: string }
+          - { name: tiktok_url, label: Посилання TikTok, type: string }
+          - { name: location, label: Локація, type: string }
+          - { name: button, label: Текст кнопки, type: string }
+      - name: footer
+        label: Нижня частина сайту
+        type: object
+        fields:
+          - { name: copyright, label: Copyright, type: string }
+          - { name: note, label: Примітка про ціни, type: text }
+
+settings:
+  commit:
+    identity: user
+    templates:
+      create: "content: додано {path}"
+      update: "content: оновлено {path}"
+      delete: "content: видалено {path}"
+      rename: "content: перейменовано {oldPath} на {newPath}"
