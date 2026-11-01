@@ -205,6 +205,9 @@ async function boot() {
     render(site);
     loading?.remove();
     initInteractions();
+    if (window.location.hash) {
+      requestAnimationFrame(() => document.querySelector(window.location.hash)?.scrollIntoView());
+    }
   } catch (error) {
     console.error(error);
     if (loading) loading.innerHTML = `<span class="brand-mark">!</span><h1>Не вдалося відкрити сайт</h1><p>${escapeHtml(error.message)}</p><a href="tel:+380685401101">Зателефонувати Mix Mix</a>`;
