@@ -138,7 +138,7 @@ price_cards:
 extra_service:
   title: Додайте трохи магії
   name: Генератор мильних бульбашок
-  price: 800 грн
+  price: 1000 грн
   description: Повітряні бульбашки додають ефектний фінал і неймовірно виглядають на фото.
   image: /uploads/bubble-service.png
   image_alt: Генератор мильних бульбашок
